@@ -71,7 +71,7 @@ fun zadanie2() {
         //тогда считаем сразу коммисию, так без коммиссии нету перевода в этом варианте карт
         "visa", "мир" -> {
             if(MonthAmount <= 600000 && SummAmount <= 150000) {
-                if ((SummAmount-(SummAmount*0.0075)) < 36) println("Реквизит ${Card} итоговая сумма перевода ${SummAmount-35}")
+                if ((SummAmount*0.0075) < 36) println("Реквизит ${Card} итоговая сумма перевода ${SummAmount-35}")
                 else println("Реквизит ${Card} итоговая сумма перевода ${SummAmount-(SummAmount*0.0075)}")
             } else println("Ошибка перевода по ${Card} сумма перевода ${SummAmount}")
         }
