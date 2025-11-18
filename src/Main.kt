@@ -70,8 +70,9 @@ fun zadanie2() {
         //если visa или мир то проверяем лимиты и минимум перевод 35 рублей
         //тогда считаем сразу коммисию, так без коммиссии нету перевода в этом варианте карт
         "visa", "мир" -> {
-            if(MonthAmount <= 600000 && SummAmount <= 150000 && SummAmount >= 35) {
-                println("Реквизит ${Card} итоговая сумма перевода ${SummAmount-(SummAmount*0.0075)}")
+            if(MonthAmount <= 600000 && SummAmount <= 150000) {
+                if ((SummAmount-(SummAmount*0.0075)) < 36) println("Реквизит ${Card} итоговая сумма перевода ${SummAmount-35}")
+                else println("Реквизит ${Card} итоговая сумма перевода ${SummAmount-(SummAmount*0.0075)}")
             } else println("Ошибка перевода по ${Card} сумма перевода ${SummAmount}")
         }
         else -> println("Ошибка! Неправильно написан реквизит перевода")
